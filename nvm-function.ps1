@@ -1,4 +1,3 @@
-# NVM PowerShell Wrapper — full version with fixes
 if (-not $global:NVM_ROOT) { $global:NVM_ROOT = "C:\nvm" }
 
 # Ask a Yes/No question, returns boolean

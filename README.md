@@ -7,7 +7,7 @@ This guide explains how to set up Node Version Manager (*NVM*) on a Windows corp
 
 - Windows machine (*corporate laptop with no admin access*)
 
-- PowerShell access
+- PowerShell access (*Command Prompt not supported*)
 
 ## 2. Download Required Tools
 
@@ -25,8 +25,7 @@ The portable package ships an `install.cmd`. Running it attempts to register val
 
 #### 1. Run the installer (normal user)
 
-Open a regular (*non-admin*) Command Prompt or PowerShell in `C:\nvm` and run:
-
+Open a regular (*non-admin*) PowerShell in `C:\nvm` and run:
 ```console
 cd C:\nvm
 .\install.cmd
@@ -180,6 +179,8 @@ Since corporate laptops don’t allow editing system PATH, we’ll use a PowerSh
 - Supports major version only usage, picks latest patch automatically
 
 - Fully portable, keeps everything in one folder (*C:\nvm*)
+
+- Supports installing and using older Node.js versions seamlessly
 
 <hr>
 <hr>
