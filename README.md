@@ -86,22 +86,30 @@ This allows PowerShell and other terminals to locate `nvm.exe` without requiring
 2. Node versions will be installed inside this folder.
 
 ### 2.5 Folder Structure Overview
-C:\nvm
+
+```console
+📁 C:\nvm
 │
-├─ nvm.exe           # NVM core executable
-├─ settings.txt      # NVM configuration
-├─ PATH.txt          # Installer PATH preview
-├─ nodejs            # Active Node version files (auto-updated by nvm use)
-└─ versions          # All installed Node versions
-    ├─ v18.17.1
-    │   ├─ node.exe
-    │   └─ ...other files
-    ├─ v20.5.0
-    │   ├─ node.exe
-    │   └─ ...
-    └─ v15.14.0      # Older Node version compatibility
-        ├─ node.exe
-        └─ ...
+├─ 📄 nvm.exe           # NVM core executable
+├─ 📄 settings.txt      # NVM configuration
+├─ 📄 PATH.txt          # Installer PATH preview
+├─ 📁 nodejs            # Active Node version files (auto-updated by nvm use)
+└─ 📁 versions          # All installed Node versions
+    ├─ 📁 v18.17.1
+    │   ├─ 📄 node.exe
+    │   └─ 📄 ...other files
+    ├─ 📁 v20.5.0
+    │   ├─ 📄 node.exe
+    │   └─ 📄 ...
+    └─ 📁 v15.14.0      # Older Node version compatibility
+        ├─ 📄 node.exe
+        └─ 📄 ...
+```
+- versions/ — stores all downloaded Node versions.
+
+- nodejs/ — points to the currently active Node version (updated automatically).
+
+- Older versions (v15 and below) are installed the same way but handled via the PowerShell wrapper to ensure compatibility.
 
 
 ## 3. Install Node Versions
