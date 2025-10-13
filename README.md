@@ -30,7 +30,7 @@ Open a regular (*non-admin*) PowerShell in `C:\nvm` and run:
 cd C:\nvm
 .\install.cmd
 ```
-- If you see Access to the registry denied — that’s expected on a non-admin machine. The script will then create two files you must edit: `settings.txt` and `PATH.txt`.
+- If you see Access to the registry denied — that’s expected on a non-admin machine. The script will then create two files you must edit: `settings.txt` and `PATH.txt`
 
 #### 2. Edit `settings.txt`
 
@@ -42,9 +42,9 @@ arch: 64
 proxy: none
 ```
 Notes:
-- root is where NVM will download/store Node versions (`C:\nvm\versions`).
+- root is where NVM will download/store Node versions (`C:\nvm\versions`)
 
-- path is where the active node symlink (*or files*) will live (`C:\nvm\nodejs`). You don't have to create `nodejs` folder.
+- path is where the active node symlink (*or files*) will live (`C:\nvm\nodejs`). You don't have to create `nodejs` folder
 
 - If nvm later complains it cannot find `settings.txt`, confirm that it is in the same folder as `nvm.exe`. If you hit weird parsing errors, try saving lines without extra quotes and ensure there are no stray Unicode characters. (*Rare quirk: some portable builds have shown odd sensitivity to formatting — if you hit trouble, try adding/removing a trailing space at line ends as a quick test.*)
   
@@ -55,11 +55,11 @@ If `install.cmd` couldn’t write the system PATH, it will dump a `PATH.txt` sho
 ```console
 PATH=C:\Windows\system32;C:\Windows;...;C:\nvm;...
 ```
-- You do not need to import PATH.txt directly; it’s just a helpful preview.
+- You do not need to import PATH.txt directly; it’s just a helpful preview
 
 ### 2.3 Configure User Environment Variables
 
-Since we don't have admin access, we need to set NVM for your account only.
+Since we don't have admin access, we need to set NVM for your account only:
 
 #### 1. Open **Environment Variables** for your account:
 
@@ -82,7 +82,7 @@ This allows PowerShell and other terminals to locate `nvm.exe` without requiring
 
 1. Inside `C:\nvm`, create a folder called `versions`: `C:\nvm\versions`
 
-2. Node versions will be installed inside this folder.
+2. Node versions will be installed inside this folder
 
 ### 2.5 Folder Structure Overview
 
@@ -104,11 +104,11 @@ This allows PowerShell and other terminals to locate `nvm.exe` without requiring
         ├─ 📄 node.exe
         └─ 📄 ...
 ```
-- versions/ — stores all downloaded Node versions.
+- versions/ — stores all downloaded Node versions
 
-- nodejs/ — points to the currently active Node version (updated automatically).
+- nodejs/ — points to the currently active Node version (updated automatically)
 
-- Older versions (v15 and below) are installed the same way but handled via the PowerShell wrapper to ensure compatibility.
+- Older versions (v15 and below) are installed the same way but handled via the PowerShell wrapper to ensure compatibility
 
 
 ## 3. Install Node Versions
@@ -122,7 +122,7 @@ This allows PowerShell and other terminals to locate `nvm.exe` without requiring
     nvm install 21
     nvm install 22
     ```
-- Note: Versions v15 and below use a separate installation routine for compatibility with older Node releases. The custom PowerShell wrapper handles this automatically.
+- Note: Versions v15 and below use a separate installation routine for compatibility with older Node releases. The custom PowerShell wrapper handles this automatically
 
 
 ## 4. Configure Custom nvm use (No Admin)
@@ -134,6 +134,8 @@ Since corporate laptops don’t allow editing system PATH, we’ll use a PowerSh
 - Check if your profile exists: `Test-Path $PROFILE`
 
 - If it returns `False`, create it: `New-Item -Path $PROFILE -ItemType File -Force`
+
+- If it returns `True`, you can edit it directly in the next step
 
 ### 4.2 Add Custom nvm Function
 
