@@ -181,22 +181,5 @@ Since corporate laptops don’t allow editing system PATH, we’ll use a PowerSh
 
 - Fully portable, keeps everything in one folder (*C:\nvm*)
 
-C:\nvm
-│
-├─ nvm.exe           # NVM core executable
-├─ settings.txt      # NVM configuration
-├─ PATH.txt          # Installer PATH preview
-├─ nodejs            # Active Node version files (auto-updated by nvm use)
-└─ versions          # All installed Node versions
-    ├─ v18.17.1
-    │   ├─ node.exe
-    │   └─ ...other files
-    ├─ v20.5.0
-    │   ├─ node.exe
-    │   └─ ...
-    └─ v15.14.0      # Older Node version compatibility
-        ├─ node.exe
-        └─ ...
-
 <hr>
 <hr>
