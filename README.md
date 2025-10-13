@@ -85,6 +85,24 @@ This allows PowerShell and other terminals to locate `nvm.exe` without requiring
 
 2. Node versions will be installed inside this folder.
 
+### 2.5 Folder Structure Overview
+C:\nvm
+│
+├─ nvm.exe           # NVM core executable
+├─ settings.txt      # NVM configuration
+├─ PATH.txt          # Installer PATH preview
+├─ nodejs            # Active Node version files (auto-updated by nvm use)
+└─ versions          # All installed Node versions
+    ├─ v18.17.1
+    │   ├─ node.exe
+    │   └─ ...other files
+    ├─ v20.5.0
+    │   ├─ node.exe
+    │   └─ ...
+    └─ v15.14.0      # Older Node version compatibility
+        ├─ node.exe
+        └─ ...
+
 
 ## 3. Install Node Versions
 
@@ -97,6 +115,7 @@ This allows PowerShell and other terminals to locate `nvm.exe` without requiring
     nvm install 21
     nvm install 22
     ```
+- Note: Versions v15 and below use a separate installation routine for compatibility with older Node releases. The custom PowerShell wrapper handles this automatically.
 
 
 ## 4. Configure Custom nvm use (No Admin)
@@ -153,6 +172,23 @@ Since corporate laptops don’t allow editing system PATH, we’ll use a PowerSh
 - Supports major version only usage, picks latest patch automatically
 
 - Fully portable, keeps everything in one folder (*C:\nvm*)
+
+C:\nvm
+│
+├─ nvm.exe           # NVM core executable
+├─ settings.txt      # NVM configuration
+├─ PATH.txt          # Installer PATH preview
+├─ nodejs            # Active Node version files (auto-updated by nvm use)
+└─ versions          # All installed Node versions
+    ├─ v18.17.1
+    │   ├─ node.exe
+    │   └─ ...other files
+    ├─ v20.5.0
+    │   ├─ node.exe
+    │   └─ ...
+    └─ v15.14.0      # Older Node version compatibility
+        ├─ node.exe
+        └─ ...
 
 <hr>
 <hr>
