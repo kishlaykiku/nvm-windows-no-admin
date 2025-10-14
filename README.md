@@ -19,7 +19,7 @@ This guide explains how to set up Node Version Manager (*NVM*) on a Windows corp
 
 3. Extract it to `C:\nvm`
 
-### 2.2 Run the portable installer script & configure `settings.txt / PATH.txt`
+### 2.2 Run the portable installer script & configure `settings.txt`
 
 The portable package ships an `install.cmd`. Running it attempts to register values (*writes to registry*) — on a corporate laptop without admin that will often fail, but the script still helps by creating `settings.txt / PATH.txt` samples for you to edit.
 
@@ -34,7 +34,7 @@ cd C:\nvm
 
 #### 2. Edit `settings.txt`
 
-Open `C:\nvm\settings.txt` (*create it if not present*) and set the root and path to writable locations. Recommended contents:
+Open `C:\nvm\settings.txt` (*create it if not present*) and set the root and path to writable locations. Copy and paste the below settings:
 ```console
 root: C:\nvm\versions
 path: C:\nvm\nodejs
@@ -72,7 +72,7 @@ Since we don't have admin access, we need to set NVM for your account only:
 - **Variable name**: `NVM_HOME`
 - **Variable value**: `C:\nvm`
   
-#### 3. Also, edit the **Path** user variable and add:
+#### 3. Also, edit the **Path** user variable and create new value and add:
 
 - `C:\nvm`
  
@@ -92,7 +92,6 @@ This allows PowerShell and other terminals to locate `nvm.exe` without requiring
 ├─ 📄 nvm.exe           # NVM core executable
 ├─ 📄 settings.txt      # NVM configuration
 ├─ 📄 PATH.txt          # Installer PATH preview
-├─ 📁 nodejs            # Active Node version files (auto-updated by nvm use)
 └─ 📁 versions          # All installed Node versions
     ├─ 📁 v18.17.1
     │   ├─ 📄 node.exe
@@ -106,8 +105,6 @@ This allows PowerShell and other terminals to locate `nvm.exe` without requiring
 ```
 - versions/ — stores all downloaded Node versions
 
-- nodejs/ — points to the currently active Node version (updated automatically)
-
 - Older versions (v15 and below) are installed the same way but handled via the PowerShell wrapper to ensure compatibility
 
 
@@ -118,9 +115,6 @@ This allows PowerShell and other terminals to locate `nvm.exe` without requiring
 2. Install (*Multiple*) Node Versions:
     ```console
     nvm install 18
-    nvm install 20
-    nvm install 21
-    nvm install 22
     ```
 - Note: Versions v15 and below use a separate installation routine for compatibility with older Node releases. The custom PowerShell wrapper handles this automatically
 
@@ -154,9 +148,9 @@ Since corporate laptops don’t allow editing system PATH, we’ll use a PowerSh
 
 - Switching Node Versions
     ```console
+    nvm use 18
     nvm use 20       # Automatically picks latest patch
     nvm use 22.20.0  # Use full version if preferred
-    nvm use 18
     ```
 
 - Checking Node Version
