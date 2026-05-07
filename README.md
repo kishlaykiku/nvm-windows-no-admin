@@ -135,17 +135,17 @@ Since corporate laptops don’t allow editing system PATH, we’ll use a PowerSh
 
 - Edit your PowerShell profile: `notepad $PROFILE`
 
-- Paste the function provided in the repo (`nvm-function.ps1`) at the end of the file and save.
+- Paste the entire code provided in the repo (`nvm-function.ps1`) at the end of the file (*PowerShell profile*) and save
 
 ### 4.3 Load the Profile
 
 - After saving, reload your profile: `. $PROFILE`
 
-- Restart PowerShell (*Optional*)
+- Restart PowerShell (*Optional - if commands don't work*)
 
 
 ## 5. Usage
-
+*Note: Restart your project before using*
 - Switching Node Versions
     ```console
     nvm use 18
@@ -178,5 +178,4 @@ Since corporate laptops don’t allow editing system PATH, we’ll use a PowerSh
 
 - Supports installing and using older Node.js versions seamlessly
 
-<hr>
 <hr>
