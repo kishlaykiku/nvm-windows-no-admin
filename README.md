@@ -135,13 +135,13 @@ Since corporate laptops don’t allow editing system PATH, we’ll use a PowerSh
 
 - Edit your PowerShell profile: `notepad $PROFILE`
 
-- Paste the entire code provided in the repo (`nvm-function.ps1`) at the end of the file (*PowerShell profile*) and save
+- Copy the entire code from `nvm-function.ps1` (*provided in this repo*) and paste it at the end of the PowerShell profile and save
 
 ### 4.3 Load the Profile
 
 - After saving, reload your profile: `. $PROFILE`
 
-- Restart PowerShell (*Optional - if commands don't work*)
+- Restart PowerShell (*Optional - if below commands don't work*)
 
 
 ## 5. Usage
